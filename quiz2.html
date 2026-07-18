@@ -1,0 +1,1876 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz — Sala de Prova</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Sora:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--
+  =====================================================================
+  BANCO DE PERGUNTAS (edite aqui, em JSON)
+  ---------------------------------------------------------------------
+  Cada pergunta segue este formato (o mesmo do seu banco de 70 questões):
+
+  {
+    "id": 1,
+    "numeroOriginal": 1,
+    "categoria": "Língua Portuguesa",
+    "pergunta": "Texto da pergunta",
+    "opcoes": {
+      "a": "texto da opção a",
+      "b": "texto da opção b",
+      "c": "texto da opção c",
+      "d": "texto da opção d",
+      "e": "texto da opção e"
+    },
+    "respostaCorreta": "e",
+    "explicacao": "Explicação de por que essa é a resposta certa.",
+    "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+    "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+  }
+
+  Basta colar seu array completo com as 70 questões dentro dos colchetes
+  abaixo, substituindo os exemplos. "numeroOriginal", "origem" e "gabarito"
+  são opcionais — se ausentes, simplesmente não aparecem na tela.
+  =====================================================================
+-->
+    <script type="application/json" id="quiz-data">
+      [
+        {
+          "id": 1,
+          "numeroOriginal": 1,
+          "categoria": "Língua Portuguesa",
+          "pergunta": "É preciso estar atento e forte. Sobre a estrutura sintática da frase em destaque, assinale a opção incorreta.",
+          "opcoes": {
+            "a": "Existe uma oração subordinada que exerce função de sujeito em relação à oração principal.",
+            "b": "Nota-se uma oração subordinada substantiva, em que a segunda oração exerce função própria de um substantivo em relação à oração principal.",
+            "c": "Observa-se uma oração subordinada reduzida de infinitivo.",
+            "d": "Verifica-se a possibilidade de desenvolver a segunda oração em “que se esteja atento e forte”.",
+            "e": "Há uma oração subordinada que delimita a informação presente na oração principal."
+          },
+          "respostaCorreta": "e",
+          "explicacao": "A construção “estar atento e forte” é uma oração subordinada substantiva subjetiva reduzida de infinitivo. Ela funciona como sujeito de “é preciso”; por isso, a afirmação de que apenas delimita a informação da principal é a incorreta.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 2,
+          "numeroOriginal": 2,
+          "categoria": "Língua Portuguesa",
+          "pergunta": "Assinale a opção em que o elemento destacado não funciona como adjunto adnominal.",
+          "opcoes": {
+            "a": "Não admira que, fora de si, e andando rápido, desse um encontrão em certo homem que ia devagar.",
+            "b": "Catete adiante, lembrou-se que a casa de Sofia era na Praia do Flamengo.",
+            "c": "Após alguns instantes rápidos, abanou a cabeça voluntariamente.",
+            "d": "Este apertou-lhe a mão satisfeitíssimo; ia ver-se livre de um sócio.",
+            "e": "Mas diga-me uma coisa, essa proposta traz algum motivo oculto?"
+          },
+          "respostaCorreta": "d",
+          "explicacao": "Em “satisfeitíssimo”, o termo atribui uma característica circunstancial ao sujeito, funcionando como predicativo, e não como adjunto adnominal.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 3,
+          "numeroOriginal": 3,
+          "categoria": "Língua Portuguesa",
+          "pergunta": "Leia o fragmento a seguir, de Fernando Pessoa: O poeta é um fingidor Finge tão completamente Que chega a fingir que é dor A dor que deveras sente. Assinale a opção correta sobre a interpretação dos versos em destaque.",
+          "opcoes": {
+            "a": "Existe uma visão negativa do fazer poético, já que o poeta é descrito como “fingidor”.",
+            "b": "O jogo de palavras em fingidor - fingir dor - contribui para caracterizar o poeta como sujeito insubmisso ao sentimento.",
+            "c": "O fingimento é matéria de poesia, é a ferramenta da criação literária.",
+            "d": "O exercício de fazer poesia torna o poeta imune à dor.",
+            "e": "Há uma perspectiva irônica que se sustenta, sobretudo, em fingir a dor que, de fato, sente-se."
+          },
+          "respostaCorreta": "c",
+          "explicacao": "Os versos mostram que o fingimento integra o próprio processo de criação poética: o poeta transforma em matéria artística até a dor que realmente sente.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 4,
+          "numeroOriginal": 4,
+          "categoria": "Língua Portuguesa",
+          "pergunta": "A felicidade é tão oposta à vida, que estando nela, a gente esquece que vive. Assinale a opção correta sobre o sentido da frase em destaque.",
+          "opcoes": {
+            "a": "É impossível ser feliz e viver.",
+            "b": "Viver pressupõe felicidade.",
+            "c": "Há uma relação paradoxal entre felicidade e vida.",
+            "d": "É preciso esquecer da felicidade para obtê-la.",
+            "e": "Descreve-se o caráter efêmero da felicidade."
+          },
+          "respostaCorreta": "c",
+          "explicacao": "A frase aproxima felicidade e esquecimento da própria vida, criando uma relação aparentemente contraditória ou paradoxal entre felicidade e viver.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 5,
+          "numeroOriginal": 5,
+          "categoria": "Língua Portuguesa",
+          "pergunta": "Assinale a opção que apresenta corretamente a regência dos verbos.",
+          "opcoes": {
+            "a": "Não faz sentido obedecer a leis absurdas.",
+            "b": "Admito que me simpatizei muito com a nova professora de Literatura.",
+            "c": "Nossos vizinhos se mudaram e residem agora à rua das Laranjeiras.",
+            "d": "Possuía uma dívida com o açougueiro, paguei-o assim que pude.",
+            "e": "Vovó sempre lembra do aniversário de todos os seus netos."
+          },
+          "respostaCorreta": "a",
+          "explicacao": "O verbo “obedecer” exige a preposição “a”: obedecer a leis. As demais opções apresentam problemas de regência, como “simpatizar com”, “residir em” e “pagar algo a alguém”.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 6,
+          "numeroOriginal": 6,
+          "categoria": "Língua Portuguesa",
+          "pergunta": "Assinale a opção que relaciona de modo incorreto o adjetivo à locução adjetiva destacada.",
+          "opcoes": {
+            "a": "Pessoas que não se contentavam com o que tinham - descontentes.",
+            "b": "Uma ferida que não se apagava - indelével.",
+            "c": "Havia algo em sua imagem que não se podia distinguir - indistinguível.",
+            "d": "Tinha a característica de alguém que não se irrita com facilidade – irascível.",
+            "e": "Água e álcool são elementos que não se misturam - imiscíveis."
+          },
+          "respostaCorreta": "d",
+          "explicacao": "“Irascível” significa alguém que se irrita com facilidade. Portanto, não corresponde à locução “alguém que não se irrita com facilidade”.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 7,
+          "numeroOriginal": 7,
+          "categoria": "Língua Portuguesa",
+          "pergunta": "Assinale a opção em que a vírgula se justifica pelo mesmo motivo do que em “se as duas tribos dividirem em paz as batatas do campo, não chegam a nutrir-se suficientemente e morrem de inanição”.",
+          "opcoes": {
+            "a": "Acrescia que, em verdade, o doente parecia estar melhorando.",
+            "b": "Verdade é, disse ainda Rubião para defender o enfermo, verdade é que o cachorro merece a estima do dono.",
+            "c": "Quando este acudiu, já ele mudara outra vez de ideia.",
+            "d": "Espreitara uma deixa, e sai-lhe do testamento a massa toda dos bens.",
+            "e": "No dia seguinte, Maria Benedita declarou à prima que estava pronta a aprender piano e francês."
+          },
+          "respostaCorreta": "c",
+          "explicacao": "Nos dois casos, a vírgula separa uma oração subordinada adverbial anteposta da oração principal: “se...” e “quando...”.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 8,
+          "numeroOriginal": 8,
+          "categoria": "Língua Portuguesa",
+          "pergunta": "O uso excessivo de telas faz mal à saúde da mente e do corpo e os efeitos podem ser ainda mais danosos nas duas primeiras décadas de vida: - Como tudo, o problema está no excesso e na falta de controle adequado, afirma o psicólogo Thiago Viola, do Instituto do Cérebro do Rio Grande do Sul. bbc.com (adaptado) Sobre o uso do discurso direto, é incorreto afirmar que este procedimento",
+          "opcoes": {
+            "a": "cria o efeito de realidade, já que a fala busca reproduzir o momento da enunciação.",
+            "b": "atribui o sentido de verdade, tendo em vista que prevalece o teor de preservação do discurso citado.",
+            "c": "delimita a fronteira entre o discurso do narrador e o discurso citado por meio de aspas, travessão e verbos de elocução.",
+            "d": "demarca a soberania do narrador, pois ele interpreta a fala citada, absorvida no fio de seu discurso.",
+            "e": "precisa transpor as palavras do discurso citado, tal qual foram enunciadas originalmente."
+          },
+          "respostaCorreta": "d",
+          "explicacao": "A alternativa D descreve uma característica do discurso indireto, no qual o narrador incorpora e interpreta a fala. No discurso direto, a voz citada é apresentada de forma autônoma.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 9,
+          "numeroOriginal": 9,
+          "categoria": "Língua Portuguesa",
+          "pergunta": "Assinale a opção que indica corretamente a noção semântica expressa pelo elemento destacado em: “A moça recostara-se em uma cadeira de balanço no claro de uma janela, de modo que seu gracioso vulto imergia-se na plena luz”.",
+          "opcoes": {
+            "a": "Consequência.",
+            "b": "Causa.",
+            "c": "Finalidade.",
+            "d": "Tempo.",
+            "e": "Proporcionalidade."
+          },
+          "respostaCorreta": "a",
+          "explicacao": "A locução “de modo que” introduz o resultado produzido pela situação anterior, expressando consequência.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 10,
+          "numeroOriginal": 10,
+          "categoria": "Língua Portuguesa",
+          "pergunta": "Assinale a opção em que o verbo destacado indica estado.",
+          "opcoes": {
+            "a": "Ele virou-lhe as costas e tornou lentamente por onde viera.",
+            "b": "Piedade ficou à janela.",
+            "c": "Os curiosos permaneciam defronte de sua porta.",
+            "d": "Coitada! Devia viver bem aborrecida da sorte.",
+            "e": "Fazes mal em andar por aí com este sol."
+          },
+          "respostaCorreta": "d",
+          "explicacao": "No trecho indicado pelo gabarito, “viver” descreve a condição ou estado da personagem, e não uma ação pontual.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 11,
+          "numeroOriginal": 11,
+          "categoria": "Língua Portuguesa",
+          "pergunta": "Assinale a opção correta em relação à concordância nominal.",
+          "opcoes": {
+            "a": "A candidata parece meia confusa.",
+            "b": "É proibido a entrada de visitantes nessa área.",
+            "c": "A diretora achou um e outro funcionário cumpridor.",
+            "d": "A entrada para o teatro, atualmente, está muito caro.",
+            "e": "As certidões estão anexas ao processo."
+          },
+          "respostaCorreta": "e",
+          "explicacao": "“Anexas” concorda corretamente com o substantivo feminino plural “certidões”.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 12,
+          "numeroOriginal": 12,
+          "categoria": "Língua Portuguesa",
+          "pergunta": "Quando oiei a terra ardendo Qual fogueira de São João Eu preguntei a Deus do céu, uai Por que tamanha judiação? Nos versos de Luiz Gonzaga, o eu poético narra, em primeira pessoa, suas impressões sobre um determinado assunto. Para isso, ele utiliza construções linguísticas próprias, constatadas pelo uso",
+          "opcoes": {
+            "a": "de uma norma linguística regional, a fim de caracterizar a cultura e o modo de vida do interior.",
+            "b": "do termo comparativo “qual”, que estabelece uma analogia entre terra e fogueira.",
+            "c": "de modalidade oral, que apresenta poucos recursos comunicativos, se comparada à modalidade escrita.",
+            "d": "do substantivo judiação, que reitera a tristeza do poeta nos trechos em destaque.",
+            "e": "de uma norma linguística desprestigiada, que serve para apontar a desigualdade social. Língua Inglesa Use the following TEXT to answer the next six questions. Technology Consultant Fast Track: How to Get Your Dream Job in IT Consulting (IT Consulting Career Guide). (English Edition) eBook Kindle only. Jumpstart your IT job search and land your dream job while your peers are still \"freshening up\" their resumes! Proven techniques to land your dream job as a high-paid IT consultant—you don’t want to miss these, if you are serious about a career in IT! Answers to IT consulting career questions most people fail to ask; actionable advice and real-life stories from seasoned IT consultants! As a fresh graduate looking for your first job, if you just do what almost everybody else is doing…you will land a hellhole job with lousy pay, long hours, nasty coworkers, and exclusively clients from hell (because you thought it was your only option to go forward in your career). If you are serious and can apply simple instructions, this book can help you become a high-paid IT consultant in your dream job by the end of the month! If you already have your first or second job in the field of IT, or even have 20 years of work experience, this book will tell you what a great option a career in IT consulting can be. With this book, you can find out why your current job is not satisfying your career aspirations and turn your career around for the better! Containing lessons from a PhD with 12 years of experience and 15,000 billable hours from Accenture and Coala, this is the book movers and shakers in the IT industry are talking about. Recommended by university professors, last-year students, as well as seasoned consultants. Even my mom says you have to read this book, or you have to answer to her! By reading this book, you will learn: What your college professor didn't tell you about the consulting business. The Pro’s and Con’s of a career in technology consulting. What other options do you have besides working for one of the global consulting giants such as Accenture, Capgemini, Deloitte, Ernst & Young (EY), KPMG, or PricewaterhouseCoopers (PwC). The must-have characteristics to succeed in IT consulting (if you don't have these, you are doomed to FAIL!). How to find your money-making niche in IT consulting. How to get the best results with the least possible effort in your job search. Best ways to prepare for the job interview in 30 minutes or less. What questions to ask in the interview to avoid nasty surprises when you are selected. Hear what others are saying: ★★★★★ “The book gives a strong and realistic description of IT consultancy. Thus, every IT student should read the book before they graduate as it will increase their probability of landing a dream job.” Samuli Pekkola, Professor, PhD, in Information Systems Sciences, Tampere University ★★★★★ “The book gives insight into technology consulting and provides great tips for job search. I believe it will be very valuable when I start looking for a position in IT. The section on how to stand out as a candidate for a job was an eyeopener.” Saku Sikiö, Information Systems Student, University of Jyväskylä ★★★★★ “This is the book I would have needed on the verge of graduation!” Teijo Kelander, MSc, Quality Consultant and Agile Coach ★★★★★ “If you are serious about IT consultancy as a profession, this book is a must-read! As a recruiter, I would prefer that applicants would better understand what this is all about.” Petteri Laamanen, MSc, CEO & Founder, Coala ★★★★★ “This book gave me valuable insights into the IT consultant’s working life, making it easier to consider the pros and cons in relation to my own values and goals.” Janita Kingelin, MSc, Marketing Manager, SoulCore ★ If you want great results in your technology consultant job search, get this book right now! https://www.amazon.com.br/Technology-Consultant-Fast-Track-Consulting- ebook/dp/B0918JB48D"
+          },
+          "respostaCorreta": "a",
+          "explicacao": "Formas como “oiei”, “preguntei” e “uai” representam uma variedade linguística regional, usada para caracterizar a cultura e o modo de vida do interior.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 13,
+          "numeroOriginal": 13,
+          "categoria": "Língua Inglesa",
+          "pergunta": "Texto-base: “Technology Consultant Fast Track: How to Get Your Dream Job in IT Consulting” é apresentado como um eBook Kindle. A obra promete técnicas e orientações para conseguir uma vaga em consultoria de TI. O texto afirma que o conteúdo serve a recém-formados, profissionais em seus primeiros empregos e também pessoas com até 20 anos de experiência. O livro é recomendado por professores universitários, estudantes do último ano e consultores experientes.\n\nConsider the following affirmatives:\n1.  The TEXT can just be found online.\n2.  The tips on this text are only for fresh graduates.\n3.   It is a printed book.\n4.  Professors, last-year students and consultants who are skilled\n    at guiding business recommend the book.\nAccording to the TEXT,",
+          "opcoes": {
+            "a": "only 2 and 4 are false.",
+            "b": "only 1 and 4 are true.",
+            "c": "only 1, 3 and 4 are true.",
+            "d": "only 1, 2 and 4 are false.",
+            "e": "only 3 and 4 are true."
+          },
+          "respostaCorreta": "b",
+          "explicacao": "O texto apresenta um eBook Kindle, portanto disponível em formato digital, não impresso; as orientações não se limitam a recém-formados e a obra é recomendada por professores, estudantes e consultores. Assim, apenas as afirmações 1 e 4 são verdadeiras.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 14,
+          "numeroOriginal": 14,
+          "categoria": "Língua Inglesa",
+          "pergunta": "Texto-base: “Technology Consultant Fast Track: How to Get Your Dream Job in IT Consulting” é apresentado como um eBook Kindle. A obra promete técnicas e orientações para conseguir uma vaga em consultoria de TI. O texto afirma que o conteúdo serve a recém-formados, profissionais em seus primeiros empregos e também pessoas com até 20 anos de experiência. O livro é recomendado por professores universitários, estudantes do último ano e consultores experientes.\n\nWhat information is in TEXT?",
+          "opcoes": {
+            "a": "Tips on an in-person appraisal to be a successful IT consultant.",
+            "b": "A review on a guide to foster the possibility of being successful in finding your Dream Job in IT Consulting, despite your experience.",
+            "c": "Challenge only beginners to read a guide well written and recommended by professors in the IT scenario.",
+            "d": "The reasons one should buy the guide to be a successful IT consultant abroad.",
+            "e": "It is a well explained guide to enhance people’s desire to find a dream internship despite their social status."
+          },
+          "respostaCorreta": "b",
+          "explicacao": "O texto divulga e avalia um guia para conseguir uma vaga desejada em consultoria de TI, dirigido tanto a iniciantes quanto a profissionais experientes.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 15,
+          "numeroOriginal": 15,
+          "categoria": "Língua Inglesa",
+          "pergunta": "In the excerpt in TEXT “Recommended by university professors, last-year students, as well as seasoned consultants. Even my mom says you have to read this book, or you have to answer to her!” The pronoun her refers to",
+          "opcoes": {
+            "a": "consultants.",
+            "b": "book.",
+            "c": "students.",
+            "d": "professors.",
+            "e": "mom."
+          },
+          "respostaCorreta": "e",
+          "explicacao": "No trecho, “her” retoma o substantivo imediatamente relacionado à fala: “my mom”.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 16,
+          "numeroOriginal": 16,
+          "categoria": "Língua Inglesa",
+          "pergunta": "In the sentence taken from TEXT “The book gives a strong and realistic description of IT consultancy. Thus, every IT student should read the book before they graduate as it will increase their probability of landing a dream job.” The underlined linker introduces",
+          "opcoes": {
+            "a": "a condition.",
+            "b": "an example.",
+            "c": "an effect.",
+            "d": "an order.",
+            "e": "a reason."
+          },
+          "respostaCorreta": "c",
+          "explicacao": "“Thus” introduz o resultado ou efeito da ideia anterior, podendo ser traduzido como “assim” ou “portanto”.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 17,
+          "numeroOriginal": 17,
+          "categoria": "Língua Inglesa",
+          "pergunta": "“With this book, you can find out why your current job is not satisfying your career aspirations and turn your career around for the better!” The discourse marker and used in TEXT is similar in meaning to",
+          "opcoes": {
+            "a": "hence.",
+            "b": "whereas.",
+            "c": "unless.",
+            "d": "moreover.",
+            "e": "meanwhile."
+          },
+          "respostaCorreta": "d",
+          "explicacao": "Nesse contexto, “and” adiciona uma nova consequência ou informação. Entre as opções, “moreover” é o conectivo de adição mais equivalente.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 18,
+          "numeroOriginal": 18,
+          "categoria": "Língua Inglesa",
+          "pergunta": "By the end of TEXT six people assessed the guide. One of them said that he should have had the opportunity to study on the guide on the brick of graduating. Choose the person who said that.",
+          "opcoes": {
+            "a": "Saku Sikiö",
+            "b": "Petteri Laamanen",
+            "c": "Samuli Pekkola",
+            "d": "Janita Kingelin",
+            "e": "Teijo Kelander Use the following TEXT to answer the next two questions. It's not often we write about printers here on the Giz, but Brother's new MPrint MW-260 gets honorable mention for being the world's thinnest printer. It can print up to 20 pages per minute from any PC, Pocket PC, or Windows Mobile handheld. Best of all, it also prints over Bluetooth (in addition to your standard USB). No word on pricing or availability, but this is a 1-pound printer we wouldn't mind adding to our travel bag. It’s worth buying! Louis Ramirez http://www.gizmodo.com/"
+          },
+          "respostaCorreta": "e",
+          "explicacao": "A frase “This is the book I would have needed on the verge of graduation!” é atribuída a Teijo Kelander.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 19,
+          "numeroOriginal": 19,
+          "categoria": "Língua Inglesa",
+          "pergunta": "The pronoun “it” in “It can print up to 20 pages per minute from any PC, Pocket PC, or Windows Mobile handheld”, taken from TEXT, refers to",
+          "opcoes": {
+            "a": "Computer.",
+            "b": "Pocket PC.",
+            "c": "Window Mobile handheld.",
+            "d": "MPrint MW-260.",
+            "e": "Bluetooth."
+          },
+          "respostaCorreta": "d",
+          "explicacao": "O pronome “it” retoma o equipamento mencionado imediatamente antes: a impressora Brother MPrint MW-260.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 20,
+          "numeroOriginal": 20,
+          "categoria": "Língua Inglesa",
+          "pergunta": "In the sentence “No word on pricing or availability, but this is a 1- pound printer we wouldn't mind adding to our travel bag”. The expression “... a 1-pound printer” taken from TEXT is referring to",
+          "opcoes": {
+            "a": "The weight of the printer.",
+            "b": "The price of the printer.",
+            "c": "The printer serial number.",
+            "d": "The printer stock availability.",
+            "e": "The printer sale. Use the following TEXT to answer the next four questions. Research-Article How to be a successful app developer: lessons from the simulation of an app ecosystem Soo Ling Lim, Peter J. Bentley Abstract App developers are constantly competing against each other to win more downloads for their apps. With hundreds of thousands of apps in these online stores, what strategy should a developer use to be successful? Should they innovate, make many similar apps, optimize their own apps or just copy the apps of others? Looking more deeply, how does a complex app ecosystem perform when developers choose to use different strategies? This paper investigates these questions using AppEco, the first Artificial Life model of mobile application ecosystems. In AppEco, developer agents build and upload apps to the app store; user agents browse the store and download the apps. A distinguishing feature of AppEco is the explicit modelling of apps as artefacts. In this work we use AppEco to simulate Apple's iOS app ecosystem and investigate common developer strategies, evaluating them in terms of downloads received, app diversity, and adoption rate. https://dl.acm.org/doi/10.1145/2384697.2384698"
+          },
+          "respostaCorreta": "a",
+          "explicacao": "A expressão “1-pound printer” informa o peso do equipamento, isto é, uma impressora que pesa uma libra.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 21,
+          "numeroOriginal": 21,
+          "categoria": "Língua Inglesa",
+          "pergunta": "Texto-base: O documento é identificado como “Research-Article” e traz título, autores e abstract. O resumo descreve uma pesquisa que usa o modelo AppEco para simular o ecossistema de aplicativos iOS, investigar estratégias de desenvolvedores e avaliar downloads, diversidade e taxa de adoção.\n\nAccording to TEXT it can be said that",
+          "opcoes": {
+            "a": "This essay is concerned not only about apps but also about successful web developers.",
+            "b": "The Text is an academic piece of writing.",
+            "c": "Artificial Intelligence has created app store.",
+            "d": "App developers are addicted to AppEco.",
+            "e": "AppEco is a website known around the world by foreigners."
+          },
+          "respostaCorreta": "b",
+          "explicacao": "O texto é identificado como “Research-Article”, apresenta autores, resumo, objetivo, método de simulação e referência acadêmica; portanto, é um texto acadêmico.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 22,
+          "numeroOriginal": 22,
+          "categoria": "Língua Inglesa",
+          "pergunta": "In the excerpt “In this work we use AppEco to simulate Apple's iOS app ecosystem and investigate common developer strategies, evaluating them in terms of downloads received, app diversity, and adoption rate. Choose the correct option according to TEXT.",
+          "opcoes": {
+            "a": "The word rate means a measure and it’s a discourse marker.",
+            "b": "The word rate means to quantify and it’s an adjective.",
+            "c": "The word rate means to quantify and it’s a subject.",
+            "d": "The word rate means to charge and it’s a verb.",
+            "e": "The word rate means a measure and it’s a noun."
+          },
+          "respostaCorreta": "e",
+          "explicacao": "Em “adoption rate”, “rate” é um substantivo que significa taxa ou medida de adoção.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 23,
+          "numeroOriginal": 23,
+          "categoria": "Língua Inglesa",
+          "pergunta": "In the sentences, “With hundreds of thousands of apps in these online stores, what strategy should a developer use to be successful? Should they innovate, make many similar apps, optimize their own apps or just copy the apps of others?”. The modal “should”, used in TEXT, expresses the idea of:",
+          "opcoes": {
+            "a": "Absence of obligation",
+            "b": "Suggestion",
+            "c": "Offer",
+            "d": "Possibility",
+            "e": "Obligation"
+          },
+          "respostaCorreta": "b",
+          "explicacao": "O modal “should” é usado para recomendar ou sugerir qual estratégia o desenvolvedor deveria adotar.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 24,
+          "numeroOriginal": 24,
+          "categoria": "Língua Inglesa",
+          "pergunta": "The word “browse” in “user agents browse the store and download the apps.”, taken from TEXT, is a verb. The same word can also be used as a noun in sentence:",
+          "opcoes": {
+            "a": "I stopped in several bookstores to ___.",
+            "b": "I usually ___ the internet for a couple of hours each evening.",
+            "c": "The brochure is well worth a ___.",
+            "d": "There are plenty of biographies for him to ___ over.",
+            "e": "I always ___ in an up-market antique shop. Raciocínio Lógico Matemático"
+          },
+          "respostaCorreta": "c",
+          "explicacao": "Em “well worth a browse”, o artigo “a” mostra que “browse” está sendo empregado como substantivo, no sentido de uma consulta ou olhada.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 25,
+          "numeroOriginal": 25,
+          "categoria": "Raciocínio Lógico Matemático",
+          "pergunta": "Arnaldo e Bernaldo associaram-se em um determinado negócio. Arnaldo entrou com R$ 12.000,00 e Bernaldo com R$ 13.000,00. Se perderem R$ 50.000,00, caberá a Arnaldo o prejuízo de",
+          "opcoes": {
+            "a": "R$ 18.000,00",
+            "b": "R$ 20.000,00",
+            "c": "R$ 24.000,00",
+            "d": "R$ 26.000,00",
+            "e": "R$ 28.000,00"
+          },
+          "respostaCorreta": "c",
+          "explicacao": "A participação de Arnaldo é 12.000/25.000. Aplicando essa proporção ao prejuízo de 50.000, obtém-se 24.000.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 26,
+          "numeroOriginal": 26,
+          "categoria": "Raciocínio Lógico Matemático",
+          "pergunta": "Uma determinada escola adota o sistema de pesos por bimestre para o cálculo da média anual. O primeiro bimestre tem peso 1, o segundo, 2, o terceiro, 3, e o quarto, 4. Assim, para calcular a média anual, um estudante deve efetuar a soma de cada uma de suas notas bimestrais multiplicadas pelos seus respectivos pesos e dividir por 10. Para ser aprovado, um aluno precisa ter média anual, no mínimo, igual a 7,0. Arnaldo tirou notas 4,0; 6,0; 8,0; 8,0 nos 4 bimestres, não necessariamente nessa ordem. Para que Arnaldo seja aprovado, a sua menor nota deve ter sido tirada no",
+          "opcoes": {
+            "a": "1º bimestre, necessariamente.",
+            "b": "1º ou 2º bimestres, necessariamente.",
+            "c": "2º bimestre, necessariamente.",
+            "d": "3º bimestre, necessariamente.",
+            "e": "3º ou 4º bimestre, necessariamente."
+          },
+          "respostaCorreta": "b",
+          "explicacao": "Para alcançar média mínima 7, a nota 4 precisa receber um dos menores pesos. Ela pode estar no 1º ou no 2º bimestre; com peso 3 ou 4, a média máxima possível fica abaixo de 7.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 27,
+          "numeroOriginal": 27,
+          "categoria": "Raciocínio Lógico Matemático",
+          "pergunta": "Dois sistemas monitoram a variação de temperatura dos servidores em um data center. Um sistema registra variações positivas (aquecimento) e o outro registra variações negativas (resfriamento). Certo dia, a soma dessas variações foi de 1 grau Celsius, indicando que o ambiente se manteve praticamente estável. No entanto, a soma dos quadrados dessas variações foi de 313, o que revela uma diferença significativa entre o maior valor positivo e o menor valor negativo registrados. A diferença entre esses valores é",
+          "opcoes": {
+            "a": "20.",
+            "b": "25.",
+            "c": "30.",
+            "d": "35.",
+            "e": "40."
+          },
+          "respostaCorreta": "b",
+          "explicacao": "Se as variações são x e y, então x+y=1 e x²+y²=313. Logo, (x-y)²=2(x²+y²)-(x+y)²=625, e a diferença é 25.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 28,
+          "numeroOriginal": 28,
+          "categoria": "Raciocínio Lógico Matemático",
+          "pergunta": "A proposição logicamente equivalente à proposição “Se Cesar é fã de futebol então ele assiste a muitos jogos” é",
+          "opcoes": {
+            "a": "Cesar é fã de futebol e assiste a muitos jogos.",
+            "b": "Cesar gosta de futebol porque assiste a muitos jogos.",
+            "c": "Cesar gosta de assistir jogos por ser fã de futebol.",
+            "d": "Se Cesar não assiste a muitos jogos então ele não é fã de futebol.",
+            "e": "Se Cesar não é fã de futebol então ele não assiste a muitos jogos."
+          },
+          "respostaCorreta": "d",
+          "explicacao": "A proposição “Se P, então Q” é logicamente equivalente à sua contrapositiva: “Se não Q, então não P”.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 29,
+          "numeroOriginal": 29,
+          "categoria": "Raciocínio Lógico Matemático",
+          "pergunta": "Numa região, cada dupla de vilarejos possui exatamente uma estrada ligando os dois. Inicialmente há x vilarejos. Com o surgimento de 2 novos vilarejos, são construídas 17 novas estradas. Nessas condições, o número x vale",
+          "opcoes": {
+            "a": "6.",
+            "b": "7.",
+            "c": "8.",
+            "d": "9.",
+            "e": "10."
+          },
+          "respostaCorreta": "c",
+          "explicacao": "Cada novo vilarejo se liga aos x antigos, gerando 2x estradas, e os dois novos também se ligam entre si, gerando mais 1. Assim, 2x+1=17 e x=8.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 30,
+          "numeroOriginal": 30,
+          "categoria": "Raciocínio Lógico Matemático",
+          "pergunta": "O preço de venda de certo item de consumo sofreu dois aumentos mensais consecutivos, sendo o primeiro de 30% e o segundo de 10%. Sobre a taxa média de aumento mensal nesse período, é correto afirmar que",
+          "opcoes": {
+            "a": "é maior que 19% e menor que 20%.",
+            "b": "é igual a 20%.",
+            "c": "é maior que 20% e menor que 21%.",
+            "d": "é igual a 21,5%.",
+            "e": "é igual a 43%. Atualidades"
+          },
+          "respostaCorreta": "a",
+          "explicacao": "A taxa média mensal composta r satisfaz (1+r)²=1,30×1,10=1,43. Assim, r≈19,58%, valor maior que 19% e menor que 20%.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 31,
+          "numeroOriginal": 31,
+          "categoria": "Atualidades",
+          "pergunta": "Na reunião de cúpula do G2 que ocorre no Brasil, país que exerce a presidência rotativa até o fim de novembro, o tema principal dos debates é a construção de um Mundo Justo e um Planeta Sustentável. O governo brasileiro deseja colocar o combate às desigualdades no centro das discussões entre os países membros. Sobre o Grupo apresentado no texto, julgue as afirmativas: I. Consiste num dos maiores blocos econômicos do planeta, sendo seu principal objetivo o livre comércio, sendo superado apenas pela União Europeia. II. Representa um fórum internacional de cooperação econômica, que possibilita entre outras coisas, debates sobre temas financeiros, fome, meio ambiente e desigualdades. III. Congrega um bloco supranacional com objetivo de alinhar políticas macroeconômicas, éticas e militares, perante a comunidade internacional. Está correto o que se afirma em",
+          "opcoes": {
+            "a": "I, apenas.",
+            "b": "II, apenas.",
+            "c": "I e II, apenas.",
+            "d": "I e III, apenas.",
+            "e": "I, II e III."
+          },
+          "respostaCorreta": "b",
+          "explicacao": "O grupo citado é um fórum de cooperação econômica e política, não um bloco de livre comércio nem uma organização supranacional militar. Apenas a afirmativa II está correta.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 32,
+          "numeroOriginal": 32,
+          "categoria": "Atualidades",
+          "pergunta": "A adoção de tecnologias digitais muitas vezes é vista como resposta para dilemas ambientais. O avanço da internet, por exemplo, permitiu a diminuição do uso de papel, que foi substituído por bytes. Entretanto, os data centers ao redor do mundo consomem aproximadamente 2% de toda eletricidade do planeta, emitindo por exemplo, quantidades similares de carbono, comparadas as da indústria aérea. Sobre os aspectos apresentados no texto, julgue os itens a seguir: ( ) As tecnologias digitais não são apenas fonte de soluções para problemas ligados ao meio ambiente, mas também consistem em fontes de impactos negativos. ( ) O texto defende que todos os avanços tecnológicos representam invariavelmente benefícios para o meio ambiente. ( ) Os data centers representam cerca de metade do consumo de energia dos ecossistemas digitais, termo cunhado para definir a relação entre infraestrutura digital, ferramentas e seres humanos. As afirmativas são, respectivamente,",
+          "opcoes": {
+            "a": "V – F – V.",
+            "b": "F – V – V.",
+            "c": "V – V – F.",
+            "d": "F – F – V.",
+            "e": "V – V – V."
+          },
+          "respostaCorreta": "a",
+          "explicacao": "O texto reconhece benefícios e impactos ambientais negativos das tecnologias digitais, não afirma que todo avanço é sempre benéfico e considera verdadeira a informação indicada sobre o consumo dos data centers. A sequência é V–F–V.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 33,
+          "numeroOriginal": 33,
+          "categoria": "Atualidades",
+          "pergunta": "A Constituição Federal é o documento jurídico-político que limita o poder estatal e o regulamenta. O art. 225 da Carta Magna confere a todos o direito ao meio ambiente equilibrado, impondo ao Poder Público e à coletividade preservá-lo, estabelecendo uma série de diretrizes aptas a assegurar a disposição. Sobre o tema abordado no texto, julgue os itens a seguir: I. É flagrante violação da Constituição, com a distribuição injusta da poluição, submetendo de forma desigual, em razão da raça, determinadas populações a precárias condições de vida. II. Um projeto de desenvolvimento sustentável deve ser baseado em inovações tecnológicas, mantendo a lógica de consumo do atual modelo econômico, proporcionando justiça social para todos. III. O conceito de racismo ambiental está ligado aos danos ambientais e sua imposição recorrente em comunidades habitadas principalmente por populações negras e pobres. Está correto o que se afirma em",
+          "opcoes": {
+            "a": "I, apenas.",
+            "b": "III, apenas.",
+            "c": "II e III, apenas.",
+            "d": "I e III, apenas.",
+            "e": "I, II e III."
+          },
+          "respostaCorreta": "d",
+          "explicacao": "As afirmativas I e III descrevem corretamente a injustiça ambiental e o conceito de racismo ambiental. A afirmativa II mantém a lógica de consumo atual e, por isso, não caracteriza adequadamente um desenvolvimento sustentável com justiça social.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 34,
+          "numeroOriginal": 34,
+          "categoria": "Atualidades",
+          "pergunta": "A Secretaria Nacional do Consumidor notificou uma grande rede de Farmácias para prestar esclarecimentos a respeito de práticas de tratamento indevido de dados pessoais de seus consumidores. O fato ocorreu por denúncia publicada em um grande portal de comunicação, que expôs a coleta inadequada de informações e sua comercialização. Sobre a denúncia, os dados podem ter o seguinte destino: I. Realização de publicidade direcionada a determinados perfis de consumidores, considerando a faixa etária, o sexo e perfis de saúde. II. Execução de publicidade para empresas do grupo econômico e para terceiros, gerando lucro indevido sem autorização ou conhecimento dos clientes. III. Pesquisas da indústria farmacêutica para produção de remédios mais baratos, democratizando o acesso a tratamentos de saúde através do programa Farmácia Popular. Está correto o que se afirma em",
+          "opcoes": {
+            "a": "I, apenas.",
+            "b": "III, apenas.",
+            "c": "I e II, apenas.",
+            "d": "I e III, apenas.",
+            "e": "I, II e III."
+          },
+          "respostaCorreta": "c",
+          "explicacao": "O uso indevido dos dados pode servir à publicidade direcionada e à comercialização para empresas do grupo ou terceiros. A finalidade indicada no item III não corresponde à denúncia apresentada.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 35,
+          "numeroOriginal": 35,
+          "categoria": "Atualidades",
+          "pergunta": "O município do Rio de Janeiro vai aplicar o conceito de cidade- esponja para diminuir os efeitos das enchentes. Esse modelo é usado em várias cidades do mundo para evitar tragédias ambientais, constituindo o ponto central de uma lei municipal, sancionada parcialmente em julho de 2024. A nova legislação adotará mecanismos sustentáveis com intuito de: ( ) Reduzir a sobrecarga dos sistemas tradicionais de drenagem possibilitando a aproximação de autossuficiência hídrica. ( ) Direcionar as águas pluviais que causam transtornos, para o reabastecimento de redes subterrâneas. ( ) Diminuir a presença da infraestrutura cinza na canalização de rios, com a construção de jardins de chuva, melhorando a impermeabilização de grandes áreas. As afirmativas são, respectivamente,",
+          "opcoes": {
+            "a": "V – F – V.",
+            "b": "F – V – V.",
+            "c": "V – V – V.",
+            "d": "F – F – V.",
+            "e": "V – V – F. Legislação Acerca de Segurança da Informação e Proteção de Dados"
+          },
+          "respostaCorreta": "e",
+          "explicacao": "As duas primeiras medidas favorecem retenção, infiltração e reaproveitamento da água. Jardins de chuva aumentam a permeabilidade, e não a impermeabilização; por isso, a terceira é falsa.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 36,
+          "numeroOriginal": 36,
+          "categoria": "Segurança da Informação e Proteção de Dados",
+          "pergunta": "A Lei nº 12.527, de 18 de novembro de 2011, dispõe sobre as restrições de acesso à informação. Nesses termos, a lei traz diversos temas que permeiam a classificação da informação. Sobre esse assunto, é correto afirmar que",
+          "opcoes": {
+            "a": "as informações podem ser classificadas como ultrassigilosas, sigilosas ou reservadas, sendo certo que a decisão respectiva é discricionária, porquanto a lei não prevê balizas.",
+            "b": "a decisão de classificação de uma informação é pública e de acesso a qualquer interessado, independentemente de demonstração de interesse, embora classificada a informação.",
+            "c": "findo o prazo de classificação ou ocorrido o evento constituidor do termo final, para que o acesso se torne público são necessários procedimento próprio e decisão específica.",
+            "d": "a informação que verse sobre conduta que implique violação dos direitos humanos praticada por agentes públicos ou a mando de autoridades públicas não pode ser objeto de restrição de acesso.",
+            "e": "a lei permite a desclassificação, mas não a redução de prazo de informação classificada, devendo a reavaliação ser feita pela autoridade classificadora ou outra superior, mediante provocação ou de ofício."
+          },
+          "respostaCorreta": "d",
+          "explicacao": "A Lei de Acesso à Informação impede restrição de acesso a informações sobre violações de direitos humanos praticadas por agentes públicos ou por ordem de autoridades.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 37,
+          "numeroOriginal": 37,
+          "categoria": "Segurança da Informação e Proteção de Dados",
+          "pergunta": "Um hacker, por ter conseguido subtrair previamente a senha de acesso, invadiu o tablet do vice-Presidente da Câmara dos Deputados e, sem este saber, adulterou informações importantes relativas ao funcionamento da Casa Parlamentar, trazendo grande prejuízo político. Identificada a pessoa, o aludido congressista ajuizou queixa-crime. Ao final do processo penal, o hacker foi condenado com aumento de pena de um terço, por conta do sujeito passivo do delito. Quanto à situação descrita, é correto afirmar que",
+          "opcoes": {
+            "a": "a deflagração da ação penal está incorreta, porquanto deveria ter sido iniciada pelo Ministério Público.",
+            "b": "na fixação da pena, deveria ter havido um aumento de metade da pena, já que da invasão resultou prejuízo político.",
+            "c": "o crime de invasão de dispositivo informático possui como elementar a exigência de o tablet estar conectado à rede de computadores.",
+            "d": "o aumento da pena deveria ter sido de dois terços da pena, por conta do ilícito penal ter sido praticado contra o vice- Presidente da Câmara dos Deputados.",
+            "e": "para configuração do delito trazido pelo art. 2º, da Lei nº 12.737, de 30 de novembro de 2012 (art. 154-A, do Código Penal), é preciso a efetiva adulteração das informações."
+          },
+          "respostaCorreta": "a",
+          "explicacao": "A ação penal, no caso descrito contra autoridade pública, deveria ser promovida pelo Ministério Público. Por isso, a queixa-crime apresentada diretamente pelo ofendido está incorreta.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 38,
+          "numeroOriginal": 38,
+          "categoria": "Segurança da Informação e Proteção de Dados",
+          "pergunta": "A Lei nº 12.965, de 23 de abril de 2014, estabelece princípios, garantias, direitos e deveres para o uso da Internet no Brasil. Ao tratar da proteção aos registros, aos dados pessoais e às comunicações privadas, tal diploma legal positiva sanções específicas para o descumprimento do que prescreve. A respeito disso, é correto afirmar que",
+          "opcoes": {
+            "a": "as sanções só podem ser aplicadas isoladamente, exceto quando o caso reclamar a mais grave que, então, poderá ser cumulada com outras.",
+            "b": "a previsão de advertência contempla duas faces: uma repressiva e outra corretiva, na medida em que se indica prazo para adoção de medidas de regularização.",
+            "c": "a censura deve ser imposta à pessoa natural, proprietária do provedor, quando este burlar a proibição de coleta de dados pessoais anteriormente aplicada.",
+            "d": "na previsão de multa, o quanto é fixado em 10% (dez por cento) do faturamento do grupo econômico no Brasil, extraído da média dos últimos três exercícios, excluídos os tributos.",
+            "e": "a Lei nº 12.965, de 23 de abril de 2014, possui um vácuo legislativo com relação a empresas estrangeiras, porque não traz regramento sancionatório para suas condutas infringentes."
+          },
+          "respostaCorreta": "b",
+          "explicacao": "O Marco Civil prevê advertência com indicação de prazo para a adoção de medidas corretivas, combinando caráter repressivo e regularizador.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 39,
+          "numeroOriginal": 39,
+          "categoria": "Segurança da Informação e Proteção de Dados",
+          "pergunta": "As sanções administrativas estão positivadas na Lei nº 13.709, de 14 de agosto de 2018 (Lei Geral de Proteção de Dados Pessoais - LGPD), em capítulo intitulado de fiscalização. Com relação ao quadro legal sancionatório mencionado, é correto afirmar que",
+          "opcoes": {
+            "a": "é possível a aplicação de sanções sem a formalização de processo administrativo correspondente, em caso no qual se constate que o agente de tratamento de dados é violador contumaz da citada lei.",
+            "b": "a lei contempla expressamente diversos parâmetros e critérios a serem considerados na aplicação da sanção, como, por exemplo, a gravidade da infração, a boa fé e o fato de o infrator ter nacionalidade estrangeira.",
+            "c": "eventual aplicação da sanção de multa simples a órgão público deverá considerar a arrecadação tributária do ente federativo a que pertença e o orçamento afetado para o desenvolvimento de suas atividades.",
+            "d": "o produto da arrecadação das multas aplicadas pela Autoridade Nacional de Proteção de Dados, inscritas ou não em dívida ativa, será destinado diretamente às pessoas naturais cujo direito à proteção de dados foi violado.",
+            "e": "em caso de vazamento individual, a lei contempla a possibilidade de conciliação direta entre controlador e titular, estando aquele, na hipótese de inexistência de acordo, sujeito à aplicação das penalidades previstas no capítulo mencionado."
+          },
+          "respostaCorreta": "e",
+          "explicacao": "A LGPD admite conciliação direta entre controlador e titular em vazamentos individuais. Sem acordo, o controlador permanece sujeito às sanções administrativas cabíveis.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 40,
+          "numeroOriginal": 40,
+          "categoria": "Segurança da Informação e Proteção de Dados",
+          "pergunta": "A Lei nº 13.709, de 14 de agosto de 2018, trouxe ao ordenamento jurídico duas figuras jurídicas importantes no sistema de proteção de dados pessoais. Sobre o desenho legal da Autoridade Nacional de Proteção de Dados e o Conselho Nacional de Proteção de Dados Pessoais e da Privacidade, é correto afirmar que",
+          "opcoes": {
+            "a": "atualmente, Conselho Nacional de Proteção de Dados Pessoais e da Privacidade possui natureza de empresa pública federal e a Autoridade Nacional de Proteção de Dados é órgão da administração pública federal.",
+            "b": "o Conselho Diretor é composto de representantes, titulares e suplentes, da Câmara dos Deputados, do Comitê Gestor da Internet do Brasil, do Senado Federal, do Conselho Nacional de Justiça e do Conselho Nacional do Ministério Público.",
+            "c": "o Conselho Nacional de Proteção de Dados Pessoais e da Privacidade possui atribuição de sugerir ações a serem realizadas pela Autoridade Nacional de Proteção de Dados e disseminar o conhecimento sobre a proteção de dados pessoais e da privacidade à população.",
+            "d": "os membros do Conselho Nacional de Proteção de Dados Pessoais e da Privacidade somente perderão seus cargos em virtude de renúncia, condenação judicial transitada em julgado ou pena de demissão decorrente de processo administrativo disciplinar.",
+            "e": "a Autoridade Nacional de Proteção de Dados é uma das integrantes do Conselho Nacional de Proteção de Dados Pessoais e da Privacidade, figurando como conselheira presidente, na hipótese de nomeação pelo Presidente da República. Conhecimentos Específicos"
+          },
+          "respostaCorreta": "c",
+          "explicacao": "O Conselho Nacional tem, entre suas atribuições, propor ações à ANPD e difundir conhecimento sobre proteção de dados pessoais e privacidade.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 41,
+          "numeroOriginal": 41,
+          "categoria": "Conhecimentos Específicos - Desenvolvimento de Software",
+          "pergunta": "No desenvolvimento de software, os frameworks Spring, Spring Cloud, Spring Boot, Hibernate e JUnit desempenham papéis importantes na construção de aplicações modernas. Assinale a opção correta em relação às características e finalidades desses frameworks.",
+          "opcoes": {
+            "a": "O Spring Boot é responsável por fornecer uma solução para desenvolvimento de microsserviços escaláveis, enquanto o Spring Cloud facilita a configuração e o gerenciamento de sistemas distribuídos.",
+            "b": "O Hibernate é um framework de teste para aplicações Java, amplamente utilizado em conjunto com o JUnit para realizar testes de unidade.",
+            "c": "O Spring é um framework voltado exclusivamente para o desenvolvimento de aplicações monolíticas, não oferecendo suporte para arquiteturas baseadas em microsserviços.",
+            "d": "O JUnit é um framework de persistência utilizado para o mapeamento objeto-relacional (ORM), permitindo interações eficientes com bancos de dados.",
+            "e": "O Spring Boot elimina a necessidade de configuração manual de dependências e servidores de aplicação, mas exige o uso de servidores como Tomcat e JBoss em modo standalone."
+          },
+          "respostaCorreta": "a",
+          "explicacao": "O Spring Boot simplifica a criação e configuração de aplicações Spring, enquanto o Spring Cloud oferece recursos para configuração e gerenciamento de sistemas distribuídos e microsserviços.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 42,
+          "numeroOriginal": 42,
+          "categoria": "Conhecimentos Específicos - Desenvolvimento de Software",
+          "pergunta": "Sobre as tecnologias XML, XSLT e JSON, assinale a opção correta.",
+          "opcoes": {
+            "a": "O XML é mais eficiente que o JSON em termos de legibilidade e compactação de dados, sendo amplamente utilizado em aplicações web modernas devido à sua simplicidade.",
+            "b": "O XSLT é uma linguagem utilizada para transformar documentos JSON em outro formato, como HTML ou XML.",
+            "c": "O JSON é amplamente utilizado em APIs devido à sua estrutura simples e leve, que facilita o transporte de dados entre cliente e servidor.",
+            "d": "Tanto XML quanto JSON têm suporte nativo para transformação de dados utilizando XSLT, o que facilita sua manipulação em diferentes formatos.",
+            "e": "O XML e o JSON são formatos estritamente equivalentes em termos de expressividade e uso no armazenamento e transporte de dados em diferentes plataformas."
+          },
+          "respostaCorreta": "c",
+          "explicacao": "O JSON é leve, legível e amplamente usado em APIs para transportar dados entre cliente e servidor. XSLT é voltado principalmente à transformação de XML.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 43,
+          "numeroOriginal": 43,
+          "categoria": "Conhecimentos Específicos - Desenvolvimento de Software",
+          "pergunta": "Em relação ao Design e arquitetura de Software, assinale a opção correta.",
+          "opcoes": {
+            "a": "O Design de Software é o processo de codificação de funcionalidades seguindo diretamente os requisitos do usuário, sem envolver abstrações ou estruturas maiores.",
+            "b": "No Design de Software de baixo nível, o foco está na criação da estrutura geral do sistema, incluindo a definição de módulos e sua interação.",
+            "c": "O Design de Software de alto nível trata de decisões relacionadas à implementação de funções e métodos específicos dentro dos componentes de um sistema.",
+            "d": "A principal diferença entre Design e Arquitetura de Software é que a Arquitetura foca em decisões amplas e estruturais, enquanto o Design foca em decisões detalhadas e específicas.",
+            "e": "A Arquitetura de Software é um conceito aplicado apenas em projetos de grande escala, sendo irrelevante para sistemas menores e simples."
+          },
+          "respostaCorreta": "d",
+          "explicacao": "Arquitetura trata das decisões mais amplas e estruturais do sistema; design detalha componentes, classes, métodos e soluções específicas.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 44,
+          "numeroOriginal": 44,
+          "categoria": "Conhecimentos Específicos - Desenvolvimento de Software",
+          "pergunta": "Uma empresa multinacional está implantando diferentes tipos de redes para melhorar a comunicação e o compartilhamento de informações entre seus funcionários, parceiros e clientes. Cada tipo de rede tem finalidades e características distintas, como o nível de acesso e o público-alvo. Com base nos conceitos de Internet, extranet, intranet e portal, assinale a opção que descreve corretamente o uso dessas redes em um ambiente corporativo.",
+          "opcoes": {
+            "a": "A intranet é uma rede pública global que conecta milhões de computadores ao redor do mundo, permitindo a comunicação e o compartilhamento de informações sem restrições.",
+            "b": "A extranet permite que organizações compartilhem informações internamente, sendo acessível apenas por funcionários dentro da rede corporativa.",
+            "c": "O portal corporativo interno é uma página da web acessada publicamente, centralizando informações e serviços para usuários externos, como clientes e fornecedores.",
+            "d": "A Internet é uma rede restrita, acessível apenas a usuários autorizados, projetada para compartilhar informações dentro de uma organização.",
+            "e": "A extranet é uma rede que utiliza tecnologias da Internet para permitir o acesso controlado a informações e serviços de uma organização, tanto para usuários internos quanto para parceiros externos autorizados."
+          },
+          "respostaCorreta": "e",
+          "explicacao": "A extranet usa tecnologias da Internet para oferecer acesso controlado a recursos da organização por usuários internos e parceiros externos autorizados.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 45,
+          "numeroOriginal": 45,
+          "categoria": "Conhecimentos Específicos - Desenvolvimento de Software",
+          "pergunta": "Uma empresa de comércio eletrônico decidiu integrar seus sistemas de pagamento usando uma arquitetura orientada a serviços e web services como a tecnologia de integração. A ação correta na implementação dessa solução para garantir baixo acoplamento e alta interoperabilidade entre os sistemas seria",
+          "opcoes": {
+            "a": "usar RESTful Web Services, que permitem a comunicação entre os sistemas de forma leve e independente de plataforma, promovendo maior flexibilidade e baixo acoplamento entre os serviços.",
+            "b": "implementar serviços SOAP sem definição de contratos formais para aumentar a flexibilidade da comunicação entre o sistema de pagamento e os provedores.",
+            "c": "utilizar interoperabilidade de rede entre os serviços de pagamento e os provedores, pois isso assegura baixo acoplamento e que as mudanças em um dos serviços se reflitam diretamente no outro, evitando inconsistências.",
+            "d": "definir um modelo de arquitetura monolítica com todos os provedores de pagamento integrados diretamente ao sistema, eliminando a necessidade de comunicação via Web Services e, assim, melhorando o desempenho.",
+            "e": "empregar Web Services com RPC (Remote Procedure Call) e WDSL para garantir que a chamada dos métodos seja feita diretamente entre o sistema de pagamento e os provedores, simplificando a integração."
+          },
+          "respostaCorreta": "a",
+          "explicacao": "Serviços REST utilizam padrões da Web, são independentes de plataforma e favorecem integração interoperável com menor acoplamento.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 46,
+          "numeroOriginal": 46,
+          "categoria": "Conhecimentos Específicos - Desenvolvimento de Software",
+          "pergunta": "Em um ambiente corporativo, uma empresa de e-commerce precisa garantir a segurança das transações realizadas por seus clientes através de seu site. Para isso, o site utiliza o protocolo HTTPS, que combina o protocolo HTTP com uma camada adicional de segurança. Assinale a opção que apresenta a diferença entre os protocolos SSL e TLS no contexto de sua aplicação em comunicações seguras via HTTPS.",
+          "opcoes": {
+            "a": "O SSL é mais seguro que o TLS, pois utiliza um algoritmo de criptografia mais avançado.",
+            "b": "O TLS substitui o SSL, corrigindo vulnerabilidades encontradas nas versões anteriores do SSL e implementando melhorias de segurança.",
+            "c": "O TLS e o SSL são intercambiáveis, pois ambos oferecem o mesmo nível de segurança, com a única diferença sendo a compatibilidade de alguns navegadores.",
+            "d": "O HTTPS só funciona com o protocolo SSL, pois foi o primeiro protocolo desenvolvido para essa finalidade.",
+            "e": "O SSL e o TLS são usados conjuntamente para garantir um nível de segurança adicional em transações bancárias, sendo o SSL utilizado para a autenticação e o TLS para a criptografia dos dados."
+          },
+          "respostaCorreta": "b",
+          "explicacao": "O TLS sucedeu o SSL, corrigindo vulnerabilidades e introduzindo melhorias de segurança. As versões antigas de SSL são obsoletas e inseguras.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 47,
+          "numeroOriginal": 47,
+          "categoria": "Conhecimentos Específicos - Desenvolvimento de Software",
+          "pergunta": "Em projetos de desenvolvimento de software, a escolha da técnica de mensuração de tamanho e esforço é essencial para a gestão eficiente e o planejamento adequado das atividades. Nesse contexto, é correto afirmar que",
+          "opcoes": {
+            "a": "o Ponto de Função oferece uma mensuração objetiva e independente do time de desenvolvimento.",
+            "b": "os Story Points permitem uma melhor padronização de estimativas entre diferentes projetos e times.",
+            "c": "o Ponto de Função é mais flexível, já que leva em conta o contexto subjetivo do time ao estimar o esforço.",
+            "d": "os Story Points são mais adequados para contratos formais de desenvolvimento, como projetos com escopo fechado e orçamentos rígidos.",
+            "e": "o Ponto de Função permite uma mensuração rápida, já que a estimativa é feita com base no esforço percebido pelo time."
+          },
+          "respostaCorreta": "a",
+          "explicacao": "Pontos de Função medem o tamanho funcional de forma mais objetiva e menos dependente da percepção de uma equipe específica, ao contrário dos Story Points.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 48,
+          "numeroOriginal": 48,
+          "categoria": "Conhecimentos Específicos - Desenvolvimento de Software",
+          "pergunta": "No desenvolvimento de aplicativos móveis para Android e iOS, uma das abordagens mais comuns é o uso de frameworks que permitem o desenvolvimento multiplataforma, reduzindo o esforço de criação de código para cada sistema operacional. O framework popular para o desenvolvimento multiplataforma e que utiliza a linguagem Dart é chamado de",
+          "opcoes": {
+            "a": "Xamarin.",
+            "b": "Flutter.",
+            "c": "React Native.",
+            "d": "Ionic.",
+            "e": "SwiftUI."
+          },
+          "respostaCorreta": "b",
+          "explicacao": "Flutter é o framework multiplataforma que utiliza a linguagem Dart.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 49,
+          "numeroOriginal": 49,
+          "categoria": "Conhecimentos Específicos - Desenvolvimento de Software",
+          "pergunta": "Em um projeto de software orientado a objetos, foi implementado o código Java abaixo:\n\nclass Animal {\n  void emitirSom() {\n    System.out.println(\"Som genérico\");\n  }\n}\n\nclass Cachorro extends Animal {\n  @Override\n  void emitirSom() {\n    System.out.println(\"Latido\");\n  }\n}\n\nCom base no princípio de Substituição de Liskov (L), que faz parte dos princípios SOLID, em relação à implementação do método emitirSom, assinale a opção correta.",
+          "opcoes": {
+            "a": "A classe Cachorro não pode sobrescrever o método emitirSom, pois isso viola o princípio da Substituição de Liskov.",
+            "b": "O princípio da Substituição de Liskov é violado porque a classe Cachorro altera o comportamento do método emitirSom herdado de Animal.",
+            "c": "O código está de acordo com o princípio da Substituição de Liskov, já que a classe Cachorro pode ser usada no lugar da classe Animal sem comprometer a corretude do programa.",
+            "d": "O princípio da Substituição de Liskov exige que o método emitirSom de Cachorro seja exatamente igual ao de Animal.",
+            "e": "A implementação fere o princípio da Substituição de Liskov porque o método sobrescrito deve lançar uma exceção quando chamado."
+          },
+          "respostaCorreta": "c",
+          "explicacao": "A subclasse Cachorro pode substituir Animal e fornecer uma implementação especializada de emitirSom sem quebrar as expectativas do programa, atendendo ao princípio de Liskov.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 50,
+          "numeroOriginal": 50,
+          "categoria": "Conhecimentos Específicos - Desenvolvimento de Software",
+          "pergunta": "No contexto da arquitetura de aplicações para ambientes web, é fundamental compreender a função e a distinção entre os diversos tipos de servidores utilizados, como o servidor de aplicações e o servidor web. Assinale a opção que apresenta corretamente as características dos servidores na arquitetura web.",
+          "opcoes": {
+            "a": "O servidor de aplicações é responsável exclusivamente pelo envio de páginas estáticas (HTML, CSS, JavaScript), enquanto o servidor web processa lógica de negócios e acessa bancos de dados.",
+            "b": "O servidor web tem como principal função processar requisições HTTP e enviar páginas estáticas ou dinâmicas ao cliente, enquanto o servidor de aplicações fornece uma camada intermediária para execução de lógica de negócios e integração com bancos de dados.",
+            "c": "O servidor de aplicações é responsável por gerenciar o tráfego HTTP, enquanto o servidor web faz o papel de intermediar requisições a sistemas legados e bancos de dados.",
+            "d": "O servidor web e o servidor de aplicações são essencialmente o mesmo, pois ambos servem conteúdos dinâmicos e processam a lógica de negócios da aplicação.",
+            "e": "O servidor de aplicações apenas faz o balanceamento de carga entre diferentes servidores web, sem processar requisições de lógica de negócios ou conectar-se a bancos de dados."
+          },
+          "respostaCorreta": "b",
+          "explicacao": "O servidor web recebe requisições HTTP e entrega conteúdos; o servidor de aplicações executa lógica de negócio e integra a aplicação com serviços e bancos de dados.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 51,
+          "numeroOriginal": 51,
+          "categoria": "Conhecimentos Específicos - Desenvolvimento de Software",
+          "pergunta": "Considerando as definições e características de SPA (Single Page Application) e PWA (Progressive Web Application), assinale a opção correta sobre suas principais diferenças e aplicações.",
+          "opcoes": {
+            "a": "Ambas SPA e PWA dependem exclusivamente de frameworks JavaScript para funcionar, sendo que sem eles essas tecnologias não podem ser implementadas.",
+            "b": "Uma SPA carrega todas as interações do usuário em uma única página sem a necessidade de recarregar a página, enquanto uma PWA é projetada para funcionar como um site com funcionalidades nativas.",
+            "c": "O foco principal de uma PWA é fornecer uma experiência de página única similar a uma SPA, com o objetivo de evitar recarregamentos completos de página.",
+            "d": "SPAs requerem Service Workers para fornecer funcionalidades como cache e notificações, característica fundamental para seu funcionamento offline.",
+            "e": "Uma SPA depende exclusivamente de um navegador para ser executada, enquanto uma PWA pode ser instalada diretamente no sistema operacional do dispositivo como um aplicativo nativo."
+          },
+          "respostaCorreta": "b",
+          "explicacao": "Uma SPA concentra a navegação e as interações em uma página sem recargas completas. Uma PWA adiciona recursos semelhantes aos de aplicativos, como instalação, cache e funcionamento offline.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 52,
+          "numeroOriginal": 52,
+          "categoria": "Conhecimentos Específicos - Desenvolvimento de Software",
+          "pergunta": "Em relação aos diferentes tipos de testes de software, considere as afirmativas abaixo: I. Os testes unitários focam em verificar o comportamento de unidades isoladas de código, como funções ou métodos, garantindo que funcionem conforme o esperado. II. Os testes de integração buscam verificar a interação entre diferentes módulos ou componentes do sistema, visando garantir que funcionem corretamente quando combinados. III. O Test-Driven Development (TDD) segue a prática de escrever os testes antes do código funcional, incentivando a criação de código mais limpo e eficiente. IV. Os testes de usabilidade avaliam a experiência do usuário ao interagir com o software, verificando se a interface é intuitiva e eficiente. Está correto o que se afirma em",
+          "opcoes": {
+            "a": "I, II e IV, apenas.",
+            "b": "I, III e IV, apenas.",
+            "c": "II, III e IV, apenas.",
+            "d": "I, II, III e IV.",
+            "e": "I e III, apenas."
+          },
+          "respostaCorreta": "d",
+          "explicacao": "As quatro afirmações descrevem corretamente testes unitários, testes de integração, TDD e testes de usabilidade.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 53,
+          "numeroOriginal": 53,
+          "categoria": "Conhecimentos Específicos - Desenvolvimento de Software",
+          "pergunta": "Em um projeto de alta complexidade, sujeito a mudanças frequentes nos requisitos e com a necessidade de entregas rápidas em ciclos incrementais, a metodologia ágil mais adequada para priorizar o valor ao cliente por meio de feedback contínuo e promover a colaboração da equipe é a",
+          "opcoes": {
+            "a": "Scrum, por organizar o trabalho em sprints fixas, com foco em entregas incrementais de software e adaptações baseadas em revisões periódicas.",
+            "b": "Kanban, por utilizar um fluxo contínuo de trabalho, permitindo a entrega de funcionalidades conforme são concluídas, sem ciclos fechados de tempo.",
+            "c": "XP (Extreme Programming), por enfatizar práticas como programação em par, testes automatizados e integração contínua, visando adaptação rápida a mudanças.",
+            "d": "Waterfall (Cascata), por ser uma metodologia linear e estruturada, permitindo controle e planejamento durante as fases do projeto.",
+            "e": "Lean, por eliminar desperdícios e otimizar o uso de recursos em projetos complexos, buscando entregas mais eficientes."
+          },
+          "respostaCorreta": "a",
+          "explicacao": "Scrum organiza o trabalho em sprints, realiza entregas incrementais e usa revisões e feedback frequentes para adaptar prioridades e maximizar valor.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 54,
+          "numeroOriginal": 54,
+          "categoria": "Conhecimentos Específicos - Desenvolvimento de Software",
+          "pergunta": "Durante o processo de engenharia de requisitos em um projeto de desenvolvimento de software para um sistema bancário, o analista de requisitos identificou que era necessário que a função de saldo de conta passasse a ser realizada em tempo real. Para isso, ele utilizou uma entrevista com o gerente do projeto e uma sessão de brainstorming com a equipe de desenvolvimento. Nesse contexto, é correto afirmar que",
+          "opcoes": {
+            "a": "o requisito identificado é funcional, pois descreve uma funcionalidade específica do sistema que o usuário deve ser capaz de executar.",
+            "b": "o requisito identificado é não funcional, pois está relacionado ao desempenho do sistema ao apresentar informações em tempo real.",
+            "c": "a entrevista com o gerente do projeto é um exemplo de técnica de prototipação, uma vez que visa a construção de um modelo para validar os requisitos.",
+            "d": "a sessão de brainstorming com a equipe de desenvolvimento é uma técnica inadequada para elicitação de requisitos, pois deve-se usar apenas entrevistas formais com os usuários finais.",
+            "e": "o processo de engenharia de requisitos geralmente ocorre após a fase de implementação do software, pois é necessário ter o software em funcionamento para capturar as necessidades dos usuários."
+          },
+          "respostaCorreta": "b",
+          "explicacao": "“Em tempo real” estabelece uma restrição de desempenho. Portanto, trata-se de um requisito não funcional, embora a consulta de saldo seja uma funcionalidade.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 55,
+          "numeroOriginal": 55,
+          "categoria": "Conhecimentos Específicos - Desenvolvimento de Software",
+          "pergunta": "No contexto de DevOps, o conceito que descreve única e corretamente a prática de fornecer rapidamente uma nova versão de software ao ambiente de produção com o mínimo de interrupções para os usuários é chamado",
+          "opcoes": {
+            "a": "Integração Contínua (CI).",
+            "b": "Entrega Contínua (CD).",
+            "c": "Gerenciamento de Configuração.",
+            "d": "Monitoramento Contínuo.",
+            "e": "Controle de Versão."
+          },
+          "respostaCorreta": "b",
+          "explicacao": "Entrega Contínua é a prática de manter o software pronto para ser disponibilizado rapidamente em produção, com baixo risco e pouca interrupção.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 56,
+          "numeroOriginal": 56,
+          "categoria": "Conhecimentos Específicos - Desenvolvimento de Software",
+          "pergunta": "Em um sistema de blockchain tradicional, cada bloco armazena informações importantes para garantir a integridade e a validação das transações. Considerando a estrutura de blockchains públicas como Bitcoin e Ethereum, o elemento que não é armazenado diretamente em um bloco",
+          "opcoes": {
+            "a": "é o Hash do bloco anterior.",
+            "b": "são as Assinaturas digitais das transações.",
+            "c": "é o Registro de saldo das carteiras participantes.",
+            "d": "é o Timestamp (carimbo de tempo).",
+            "e": "são os Dados das transações."
+          },
+          "respostaCorreta": "c",
+          "explicacao": "Blocos armazenam transações, assinaturas, timestamp e referência ao bloco anterior. O saldo é calculado a partir do histórico ou mantido no estado da rede, não como um registro direto obrigatório em cada bloco.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 57,
+          "numeroOriginal": 57,
+          "categoria": "Conhecimentos Específicos - Desenvolvimento de Software",
+          "pergunta": "Em relação às arquiteturas hexagonal e de microsserviços, considere as seguintes afirmações: I. A arquitetura hexagonal, também chamada de Arquitetura de Portas e Adaptadores, visa separar a lógica de negócios das interfaces externas, permitindo uma fácil troca de implementações. II. Microsserviços são pequenos serviços que compartilham o mesmo banco de dados, promovendo maior acoplamento entre os módulos da aplicação para garantir a consistência dos dados. III. A arquitetura monolítica pode ser distribuída, mas requer que todos os módulos sejam implantados como um conjunto, ao contrário dos microsserviços, que permitem a implantação independente de cada módulo. Está correto o que se afirma em",
+          "opcoes": {
+            "a": "I, apenas.",
+            "b": "II, apenas.",
+            "c": "III, apenas.",
+            "d": "I e II, apenas.",
+            "e": "I e III, apenas."
+          },
+          "respostaCorreta": "e",
+          "explicacao": "A arquitetura hexagonal separa a lógica de negócio das interfaces externas, e microsserviços permitem implantação independente. A afirmação de que microsserviços devem compartilhar banco e aumentar acoplamento é falsa.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 58,
+          "numeroOriginal": 58,
+          "categoria": "Conhecimentos Específicos - Desenvolvimento de Software",
+          "pergunta": "A Inteligência Artificial (IA) é uma área da ciência da computação que visa desenvolver sistemas capazes de realizar tarefas que normalmente exigiriam inteligência humana. O conceito que está mais diretamente relacionado ao desenvolvimento de sistemas que aprendem com os dados e melhoram seu desempenho ao longo do tempo é o de",
+          "opcoes": {
+            "a": "Algoritmo Genético.",
+            "b": "Redes Neurais Artificiais.",
+            "c": "Lógica Booleana.",
+            "d": "Busca Heurística.",
+            "e": "Programação Linear."
+          },
+          "respostaCorreta": "b",
+          "explicacao": "Redes neurais artificiais são modelos capazes de aprender padrões a partir de dados e melhorar seu desempenho durante o treinamento.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 59,
+          "numeroOriginal": 59,
+          "categoria": "Conhecimentos Específicos - Desenvolvimento de Software",
+          "pergunta": "Em arquiteturas modernas de Data Warehousing, o processo de ETL é fundamental para preparar os dados de forma eficiente para a tomada de decisões estratégicas. Ele é como uma ponte entre os sistemas e o Data Warehouse. Nesse contexto, o principal objetivo do processo de ETL em uma solução de Data Warehousing é",
+          "opcoes": {
+            "a": "criar visualizações e dashboards interativos para serem analisados em tempo real.",
+            "b": "realizar análises estatísticas complexas nos dados, aplicando técnicas de modelagem preditiva para descobrir insights ocultos.",
+            "c": "desenvolver e treinar modelos de machine learning, facilitando a previsão de tendências.",
+            "d": "extrair dados de diversas fontes, transformá-los em um formato padronizado e consistente e carregá-los no Data Warehouse.",
+            "e": "gerenciar o acesso e a segurança dos dados armazenados no Data Warehouse, garantindo assim que as informações estejam protegidas contra acessos não autorizados."
+          },
+          "respostaCorreta": "d",
+          "explicacao": "ETL significa extrair dados de diferentes fontes, transformá-los para um formato consistente e carregá-los no Data Warehouse.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 60,
+          "numeroOriginal": 60,
+          "categoria": "Conhecimentos Específicos - Desenvolvimento de Software",
+          "pergunta": "Os Sistemas de Suporte à Decisão (SSDs) contribuem para gestores na tomada de decisões, utilizando dados, análises e algoritmos sofisticados. Eles auxiliam a enfrentar diferentes tipos de problemas, desde os muito bem definidos até os que exigem uma certa intuição e julgamento humano. Assinale a opção que representa corretamente a capacidade dos SSDs de lidar com diferentes tipos de problemas e decisões:",
+          "opcoes": {
+            "a": "Os SSDs são adequados apenas para problemas estruturados, com procedimentos claramente definidos e automatizáveis.",
+            "b": "Os SSDs são ideais para problemas não estruturados, em que a intuição e o julgamento humano são fundamentais.",
+            "c": "Os SSDs são mais eficazes em problemas semiestruturados, combinando elementos estruturados e não estruturados.",
+            "d": "Os SSDs podem ser aplicados a problemas estruturados, semiestruturados e não estruturados, oferecendo flexibilidade para apoiar decisões em diversos contextos.",
+            "e": "Os SSDs são limitados a problemas específicos de uma única área funcional e não se aplicam a outros setores empresariais."
+          },
+          "respostaCorreta": "d",
+          "explicacao": "Sistemas de Suporte à Decisão podem apoiar problemas estruturados, semiestruturados e não estruturados, combinando dados, modelos e julgamento humano.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 61,
+          "numeroOriginal": 61,
+          "categoria": "Conhecimentos Específicos - Desenvolvimento de Software",
+          "pergunta": "Na hora de colocar um projeto de BI em prática, mapear as fontes de dados é primordial. É como preparar o terreno antes de construir: se a base não for sólida, a casa não fica em pé. É necessário garantir que as informações que vamos usar sejam úteis, relevantes e de alta qualidade. Nessa fase, seguir as boas práticas é fundamental para que os dados se encaixem nas necessidades do negócio e nos objetivos do projeto. Mas cuidado! Algumas abordagens podem acabar prejudicando tudo se não forem bem executadas. Assinale a opção que descreve uma prática não recomendada no mapeamento de fontes de dados para um projeto de BI.",
+          "opcoes": {
+            "a": "Conduzir entrevistas abrangentes com usuários e stakeholders, utilizando técnicas de elicitação para extrair requisitos detalhados e garantir que todas as necessidades sejam consideradas.",
+            "b": "Analisar documentos e sistemas existentes para identificar potenciais fontes de dados, assegurando que todo o repositório de informações relevantes seja considerado.",
+            "c": "Coletar dados de todas as fontes disponíveis, sem discriminação, incluindo aqueles que apresentam inconsistências, incertezas ou baixa relevância, a fim de maximizar a quantidade de dados no sistema.",
+            "d": "Avaliar a qualidade dos dados e sua adequação aos objetivos do projeto, garantindo que apenas informações precisas e confiáveis sejam utilizadas para gerar insights de valor.",
+            "e": "Manter uma documentação detalhada das fontes de dados, incluindo suas características, formatos e relacionamentos, para garantir uma governança de dados eficaz e facilitar auditorias futuras."
+          },
+          "respostaCorreta": "c",
+          "explicacao": "Coletar indiscriminadamente todas as fontes, inclusive dados inconsistentes ou irrelevantes, reduz a qualidade do projeto. O mapeamento deve priorizar dados úteis, confiáveis e alinhados ao negócio.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 62,
+          "numeroOriginal": 62,
+          "categoria": "Conhecimentos Específicos - Desenvolvimento de Software",
+          "pergunta": "As políticas de controle de acesso em sistemas computacionais são fundamentais para garantir a segurança e a integridade dos dados, regulando quem pode acessar, modificar ou interagir com recursos específicos. A política de controle de acesso cujo procedimento baseia-se na comparação de rótulos de segurança com autorizações que indicam quais entidades do sistema têm direito a acessar determinados recursos é a de controle de acesso",
+          "opcoes": {
+            "a": "discricionário.",
+            "b": "mandatório.",
+            "c": "por entrada confiável.",
+            "d": "por papéis.",
+            "e": "por privilégio mínimo."
+          },
+          "respostaCorreta": "b",
+          "explicacao": "No controle de acesso mandatório, decisões são baseadas em rótulos de segurança e níveis de autorização definidos centralmente.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 63,
+          "numeroOriginal": 63,
+          "categoria": "Conhecimentos Específicos - Desenvolvimento de Software",
+          "pergunta": "A OWASP Top 10 é uma lista amplamente reconhecida das vulnerabilidades mais críticas em aplicações web, criada pela Open Web Application Security Project (OWASP). Atualizada periodicamente, a lista destaca as principais falhas de segurança que podem ser exploradas por atacantes. Com foco em orientar desenvolvedores e equipes de segurança, a OWASP Top 10 serve como uma referência essencial para proteger aplicações web e melhorar as práticas de desenvolvimento seguro. Em sua versão OWASP Top 10:2021, identificamos como uma categoria de vulnerabilidade",
+          "opcoes": {
+            "a": "a falsificação de solicitação do lado do servidor.",
+            "b": "a proteção da cadeia de suprimentos de software.",
+            "c": "a proteção do ambiente de engenharia.",
+            "d": "o treinamento operacional.",
+            "e": "o uso de recursos de linguagens e frameworks."
+          },
+          "respostaCorreta": "a",
+          "explicacao": "“Server-Side Request Forgery” (SSRF), traduzida como falsificação de solicitação do lado do servidor, aparece como categoria A10 na OWASP Top 10:2021.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 64,
+          "numeroOriginal": 64,
+          "categoria": "Conhecimentos Específicos - Desenvolvimento de Software",
+          "pergunta": "A arquitetura de segurança X.800 para o modelo OSI define mecanismos de segurança próprios, que podem ser incorporados à uma camada de protocolo específica com o objetivo de oferecer serviços de segurança OSI, ou mecanismos de segurança disseminados, que não são específicos de uma camada ou serviço. Assinale a opção que indica um mecanismo de segurança específico.",
+          "opcoes": {
+            "a": "Detecção de evento.",
+            "b": "Funcionalidade confiável.",
+            "c": "Preenchimento de tráfego.",
+            "d": "Rótulo de segurança.",
+            "e": "Trilha de auditoria de segurança."
+          },
+          "respostaCorreta": "c",
+          "explicacao": "Preenchimento de tráfego é um mecanismo específico de segurança da arquitetura X.800, usado para dificultar a análise de padrões de comunicação.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 65,
+          "numeroOriginal": 65,
+          "categoria": "Conhecimentos Específicos - Desenvolvimento de Software",
+          "pergunta": "Sobre as diferenças entre abordagens relacionais e multidimensionais em bancos de dados, assinale a opção correta.",
+          "opcoes": {
+            "a": "A abordagem multidimensional é mais eficiente para transações online (OLTP) do que a abordagem relacional.",
+            "b": "A abordagem relacional é usada principalmente em sistemas de apoio à decisão (OLAP), enquanto a multidimensional é usada em sistemas transacionais (OLTP).",
+            "c": "A abordagem multidimensional facilita a análise de grandes volumes de dados organizados em dimensões e métricas.",
+            "d": "Em uma abordagem relacional, os dados são organizados em cubos, o que facilita a análise em tempo real.",
+            "e": "A abordagem multidimensional não suporta agregações de dados ou cálculos como somas e médias."
+          },
+          "respostaCorreta": "c",
+          "explicacao": "Modelos multidimensionais organizam informações em dimensões, medidas e cubos, facilitando análises e agregações típicas de OLAP.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 66,
+          "numeroOriginal": 66,
+          "categoria": "Conhecimentos Específicos - Desenvolvimento de Software",
+          "pergunta": "Sobre bancos de dados NoSQL, assinale a opção correta.",
+          "opcoes": {
+            "a": "Bancos de dados NoSQL seguem estritamente as propriedades ACID.",
+            "b": "Os bancos de dados NoSQL utilizam sempre o modelo relacional de dados.",
+            "c": "Bancos de dados NoSQL são adequados para sistemas que exigem alta disponibilidade e escalabilidade horizontal.",
+            "d": "Em um banco de dados NoSQL, os dados são sempre armazenados em forma de grafos.",
+            "e": "Bancos de dados NoSQL são melhores para sistemas como ERPs e CRMs."
+          },
+          "respostaCorreta": "c",
+          "explicacao": "NoSQL é frequentemente adotado quando se busca alta disponibilidade, distribuição e escalabilidade horizontal.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 67,
+          "numeroOriginal": 67,
+          "categoria": "Conhecimentos Específicos - Desenvolvimento de Software",
+          "pergunta": "Sobre as técnicas de integração e ingestão de dados ETL (Extract, Transform, Load) e ELT (Extract, Load, Transform), assinale a opção incorreta.",
+          "opcoes": {
+            "a": "Em ETL, os dados são transformados antes de serem carregados no sistema de destino.",
+            "b": "ETL é mais adequado para sistemas de data warehouse tradicionais, onde a transformação de dados ocorre antes do carregamento.",
+            "c": "ELT aproveita a capacidade de processamento do sistema de destino, transformando os dados após o carregamento.",
+            "d": "ELT é mais eficiente em cenários onde o volume de dados é pequeno e o processamento pode ser feito fora do sistema de destino.",
+            "e": "ETL pode ser mais lento em comparação ao ELT quando o sistema de destino tem alta capacidade de processamento."
+          },
+          "respostaCorreta": "d",
+          "explicacao": "A alternativa D é incorreta: ELT costuma ser vantajoso especialmente com grandes volumes de dados e alta capacidade de processamento no sistema de destino.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 68,
+          "numeroOriginal": 68,
+          "categoria": "Conhecimentos Específicos - Desenvolvimento de Software",
+          "pergunta": "Uma equipe de desenvolvimento está trabalhando em um projeto importante usando Scrum. Durante o Daily Scrum, um dos desenvolvedores comenta que está com dificuldades para concluir uma tarefa e provavelmente não conseguirá terminá-la até o fim do Sprint. Diante disso, o Scrum Master sugere que a equipe pense em como reorganizar as tarefas para garantir que o objetivo do Sprint ainda seja alcançado. Para ajudar a equipe a continuar no caminho certo, o Scrum Master deve",
+          "opcoes": {
+            "a": "redistribuir as tarefas por conta própria, sem envolver a equipe, para garantir que tudo seja concluído a tempo.",
+            "b": "incentivar a equipe a discutir o problema e encontrar uma solução colaborativa, removendo qualquer obstáculo, mas sem interferir demais.",
+            "c": "assumir a tarefa do desenvolvedor, garantindo que o prazo seja cumprido.",
+            "d": "escalar o problema ao Product Owner, deixando que ele reorganize as prioridades e tarefas.",
+            "e": "encerrar o Sprint mais cedo, já que a tarefa não será concluída."
+          },
+          "respostaCorreta": "b",
+          "explicacao": "O Scrum Master deve facilitar a colaboração e ajudar a remover impedimentos, sem impor unilateralmente a redistribuição das tarefas.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 69,
+          "numeroOriginal": 69,
+          "categoria": "Conhecimentos Específicos - Desenvolvimento de Software",
+          "pergunta": "A equipe de marketing resolveu mudar as coisas nessa eleição e escolheu usar o SCRUM. Na reunião de planejamento do Sprint, o coordenador de campanha (Product Owner) apresentou uma lista de tarefas essenciais: criar conteúdo para as redes sociais, produzir vídeos e organizar eventos locais. Um dos membros da equipe sugeriu que todas as tarefas fossem incluídas no Sprint, mas, dada a complexidade, não devem caber dentro do Sprint. Assinale a opção que indica como a equipe de marketing deveria lidar com a seleção das tarefas para o Sprint.",
+          "opcoes": {
+            "a": "O membro da equipe está certo em querer incluir todas as tarefas, já que campanhas eleitorais são imprevisíveis e mudanças de última hora podem acontecer.",
+            "b": "A equipe deve priorizar as tarefas que podem ser concluídas dentro do Sprint, levando em conta a capacidade de trabalho e o tempo disponível, para garantir que os objetivos mais importantes da campanha sejam alcançados.",
+            "c": "O coordenador de campanha (Product Owner) deve decidir sozinho quais tarefas serão incluídas no Sprint, sem consultar o restante da equipe.",
+            "d": "A equipe deve colocar o máximo de tarefas possível no Sprint para cobrir todas as frentes da campanha, mesmo que algumas não sejam finalizadas.",
+            "e": "O Scrum Master deve adicionar mais tarefas ao Sprint durante o processo, se perceber que a equipe está avançando rápido demais."
+          },
+          "respostaCorreta": "b",
+          "explicacao": "A equipe deve selecionar trabalho compatível com sua capacidade e com o tempo do Sprint, priorizando os itens mais importantes para atingir o objetivo do Sprint.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        },
+        {
+          "id": 70,
+          "numeroOriginal": 70,
+          "categoria": "Conhecimentos Específicos - Desenvolvimento de Software",
+          "pergunta": "No contexto do gerenciamento de projetos, uma abordagem Ágil Híbrida é caracterizada por",
+          "opcoes": {
+            "a": "utilizar exclusivamente metodologias ágeis em todos os aspectos do projeto.",
+            "b": "combinar práticas ágeis com métodos tradicionais de gerenciamento de projetos para atender às necessidades específicas da equipe e do projeto.",
+            "c": "adotar apenas as cerimônias do Scrum, sem considerar outros métodos.",
+            "d": "implementar um plano fixo e detalhado antes de iniciar o projeto, sem revisões.",
+            "e": "focar unicamente na documentação, ignorando a interação com a equipe."
+          },
+          "respostaCorreta": "b",
+          "explicacao": "Uma abordagem Ágil Híbrida combina práticas ágeis e métodos tradicionais, escolhendo elementos de cada abordagem conforme as necessidades do projeto.",
+          "origem": "DATAPREV 2024 - ATI Desenvolvimento de Software - Prova Tipo 1 (Branca)",
+          "gabarito": "Preliminar publicado para a prova de 17/11/2024"
+        }
+      ]
+    </script>
+  </head>
+  <body>
+    <div class="stage">
+      <header class="masthead">
+        <span class="masthead-kicker">sala de prova</span>
+        <h1 class="masthead-title">Quiz</h1>
+      </header>
+
+      <div class="scoreboard" id="scoreboard" aria-hidden="true"></div>
+
+      <main class="card" id="card">
+        <!-- conteúdo injetado via JS -->
+      </main>
+
+      <footer class="hint" id="hint">
+        use as teclas <kbd>A</kbd>–<kbd>E</kbd> para responder
+      </footer>
+    </div>
+
+    <script>
+      (function () {
+        const raw = document.getElementById("quiz-data").textContent;
+        const QUESTIONS = JSON.parse(raw);
+
+        /* Nota: se preferir carregar de um arquivo externo (perguntas.json)
+     servido por um servidor local, troque as duas linhas acima por:
+
+     let QUESTIONS = [];
+     fetch('perguntas.json').then(r => r.json()).then(data => {
+       QUESTIONS = data;
+       start();
+     });
+
+     Isso não funciona abrindo o HTML direto (file://) por causa do CORS —
+     por isso este arquivo já vem com as perguntas embutidas no bloco JSON acima. */
+
+        const LETTERS = ["a", "b", "c", "d", "e"];
+        const card = document.getElementById("card");
+        const scoreboard = document.getElementById("scoreboard");
+
+        let current = 0;
+        let score = 0;
+        let answered = false;
+
+        function buildScoreboard() {
+          scoreboard.innerHTML = "";
+          scoreboard.setAttribute("aria-hidden", "false");
+          QUESTIONS.forEach((_, i) => {
+            const seg = document.createElement("span");
+            seg.className = "seg";
+            seg.dataset.index = i;
+            scoreboard.appendChild(seg);
+          });
+          updateScoreboard();
+        }
+
+        function updateScoreboard() {
+          const segs = scoreboard.querySelectorAll(".seg");
+          segs.forEach((seg, i) => {
+            seg.classList.remove(
+              "seg-current",
+              "seg-done",
+              "seg-correct",
+              "seg-wrong",
+            );
+            if (i < current) {
+              seg.classList.add("seg-done");
+            } else if (i === current) {
+              seg.classList.add("seg-current");
+            }
+          });
+        }
+
+        function markScoreboard(idx, correct) {
+          const segs = scoreboard.querySelectorAll(".seg");
+          segs[idx].classList.add(correct ? "seg-correct" : "seg-wrong");
+        }
+
+        function renderQuestion() {
+          answered = false;
+          const q = QUESTIONS[current];
+          updateScoreboard();
+
+          const optionsHtml = LETTERS.filter((l) => q.opcoes[l] !== undefined)
+            .map(
+              (l) => `
+        <button class="option" data-letter="${l}" role="listitem">
+          <span class="badge">${l}</span>
+          <span class="option-text">${q.opcoes[l]}</span>
+        </button>
+      `,
+            )
+            .join("");
+
+          const categoriaHtml = q.categoria
+            ? `<span class="q-tag">${q.categoria}</span>`
+            : "";
+
+          const numeroHtml = q.numeroOriginal
+            ? `<span class="q-original">questão original nº <span class="mono">${q.numeroOriginal}</span></span>`
+            : "";
+
+          card.innerHTML = `
+      <div class="q-meta">
+        <span class="q-count">pergunta <span class="mono">${current + 1}</span> / <span class="mono">${QUESTIONS.length}</span></span>
+        <span class="q-score">acertos <span class="mono">${score}</span></span>
+      </div>
+      <div class="q-tags">${categoriaHtml}${numeroHtml}</div>
+      <h2 class="q-text">${q.pergunta}</h2>
+      <div class="options" role="list">${optionsHtml}</div>
+      <div class="feedback" id="feedback" aria-live="polite"></div>
+      <div class="actions" id="actions"></div>
+    `;
+
+          card.querySelectorAll(".option").forEach((btn) => {
+            btn.addEventListener("click", () =>
+              selectAnswer(btn.dataset.letter),
+            );
+          });
+        }
+
+        function selectAnswer(letter) {
+          if (answered) return;
+          answered = true;
+
+          const q = QUESTIONS[current];
+          const correta = q.respostaCorreta;
+          const isCorrect = letter === correta;
+          if (isCorrect) score++;
+          markScoreboard(current, isCorrect);
+
+          card.querySelectorAll(".option").forEach((btn) => {
+            btn.disabled = true;
+            const l = btn.dataset.letter;
+            if (l === correta) btn.classList.add("is-correct");
+            if (l === letter && !isCorrect) btn.classList.add("is-wrong");
+          });
+
+          const feedback = document.getElementById("feedback");
+          feedback.classList.add(
+            "show",
+            isCorrect ? "feedback-correct" : "feedback-wrong",
+          );
+
+          const fonteHtml =
+            q.origem || q.gabarito
+              ? `<p class="feedback-fonte">${[q.origem, q.gabarito].filter(Boolean).join(" · ")}</p>`
+              : "";
+
+          feedback.innerHTML = `
+      <div class="feedback-head">
+        ${
+          isCorrect
+            ? '<span class="feedback-tag">correto</span>'
+            : `<span class="feedback-tag">incorreto</span><span class="feedback-answer">resposta certa: <strong>${correta.toUpperCase()}</strong> — ${q.opcoes[correta]}</span>`
+        }
+      </div>
+      <p class="feedback-explain">${q.explicacao}</p>
+      ${fonteHtml}
+    `;
+
+          const actions = document.getElementById("actions");
+          const isLast = current === QUESTIONS.length - 1;
+          actions.innerHTML = `<button class="next-btn" id="next-btn">${isLast ? "ver resultado" : "próxima pergunta →"}</button>`;
+          document.getElementById("next-btn").addEventListener("click", () => {
+            if (isLast) {
+              renderResult();
+            } else {
+              current++;
+              renderQuestion();
+            }
+          });
+        }
+
+        function renderResult() {
+          updateScoreboard();
+          const pct = Math.round((score / QUESTIONS.length) * 100);
+          let tier = "quase lá";
+          if (pct === 100) tier = "perfeito";
+          else if (pct >= 80) tier = "excelente";
+          else if (pct >= 50) tier = "bom trabalho";
+
+          card.innerHTML = `
+      <div class="result">
+        <span class="result-kicker">resultado final</span>
+        <div class="result-score">
+          <span class="mono result-number">${score}</span>
+          <span class="result-slash">/ ${QUESTIONS.length}</span>
+        </div>
+        <p class="result-tier">${tier} — ${pct}% de acertos</p>
+        <button class="next-btn" id="restart-btn">refazer o quiz</button>
+      </div>
+    `;
+          document
+            .getElementById("restart-btn")
+            .addEventListener("click", restart);
+        }
+
+        function restart() {
+          current = 0;
+          score = 0;
+          buildScoreboard();
+          renderQuestion();
+        }
+
+        document.addEventListener("keydown", (e) => {
+          const key = e.key.toLowerCase();
+          if (LETTERS.includes(key)) {
+            const btn = card.querySelector(`.option[data-letter="${key}"]`);
+            if (btn && !answered) btn.click();
+          }
+          if (key === "enter") {
+            const next =
+              document.getElementById("next-btn") ||
+              document.getElementById("restart-btn");
+            if (next) next.click();
+          }
+        });
+
+        buildScoreboard();
+        renderQuestion();
+      })();
+    </script>
+
+    <style>
+      :root {
+        --bg: #14172b;
+        --bg-alt: #1e2242;
+        --card: #f7f2e7;
+        --ink: #1e2242;
+        --ink-soft: #5b5f82;
+        --gold: #e7b23d;
+        --correct: #3f9b6e;
+        --correct-bg: #e4f1e9;
+        --wrong: #d8492f;
+        --wrong-bg: #fbe6e0;
+        --line: #e2dac8;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background:
+          radial-gradient(
+            circle at 15% 10%,
+            rgba(231, 178, 61, 0.09),
+            transparent 45%
+          ),
+          radial-gradient(
+            circle at 85% 90%,
+            rgba(231, 178, 61, 0.06),
+            transparent 40%
+          ),
+          var(--bg);
+        font-family: "Sora", sans-serif;
+        color: var(--ink);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 32px 16px;
+      }
+
+      .stage {
+        width: 100%;
+        max-width: 640px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .masthead {
+        text-align: center;
+        color: var(--card);
+      }
+
+      .masthead-kicker {
+        display: block;
+        font-family: "Sora", sans-serif;
+        font-size: 12px;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 6px;
+      }
+
+      .masthead-title {
+        font-family: "Fraunces", serif;
+        font-weight: 700;
+        font-size: 44px;
+        margin: 0;
+        letter-spacing: -0.01em;
+      }
+
+      .scoreboard {
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .seg {
+        width: 14px;
+        height: 6px;
+        border-radius: 3px;
+        background: rgba(247, 242, 231, 0.16);
+        transition:
+          background 0.25s ease,
+          transform 0.2s ease;
+      }
+
+      .seg-current {
+        background: var(--gold);
+        box-shadow: 0 0 0 3px rgba(231, 178, 61, 0.2);
+      }
+
+      .seg-done {
+        background: rgba(247, 242, 231, 0.4);
+      }
+
+      .seg-correct {
+        background: var(--correct);
+      }
+
+      .seg-wrong {
+        background: var(--wrong);
+      }
+
+      .card {
+        background: var(--card);
+        border-radius: 18px;
+        padding: 36px 32px;
+        box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.55);
+        border: 1px solid rgba(20, 23, 43, 0.06);
+      }
+
+      .q-meta {
+        display: flex;
+        justify-content: space-between;
+        font-size: 13px;
+        color: var(--ink-soft);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 14px;
+      }
+
+      .mono {
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 700;
+        color: var(--ink);
+      }
+
+      .q-tags {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 14px;
+      }
+
+      .q-tag {
+        display: inline-block;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11.5px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--bg);
+        background: var(--gold);
+        padding: 4px 10px;
+        border-radius: 999px;
+      }
+
+      .q-original {
+        display: inline-flex;
+        align-items: center;
+        font-size: 11.5px;
+        color: var(--ink-soft);
+        padding: 4px 2px;
+      }
+
+      .q-text {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 25px;
+        line-height: 1.32;
+        margin: 0 0 26px;
+      }
+
+      .options {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .option {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        width: 100%;
+        text-align: left;
+        padding: 14px 16px;
+        border-radius: 12px;
+        border: 1.5px solid var(--line);
+        background: #fffdf8;
+        cursor: pointer;
+        font-family: "Sora", sans-serif;
+        font-size: 15.5px;
+        color: var(--ink);
+        transition:
+          border-color 0.15s ease,
+          transform 0.1s ease,
+          background 0.15s ease;
+      }
+
+      .option:hover:not(:disabled) {
+        border-color: var(--gold);
+        transform: translateY(-1px);
+      }
+
+      .option:disabled {
+        cursor: default;
+      }
+
+      .badge {
+        flex: 0 0 auto;
+        width: 30px;
+        height: 30px;
+        border-radius: 8px;
+        background: var(--bg-alt);
+        color: var(--card);
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 700;
+        font-size: 14px;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .option-text {
+        flex: 1;
+      }
+
+      .option.is-correct {
+        background: var(--correct-bg);
+        border-color: var(--correct);
+      }
+      .option.is-correct .badge {
+        background: var(--correct);
+      }
+
+      .option.is-wrong {
+        background: var(--wrong-bg);
+        border-color: var(--wrong);
+      }
+      .option.is-wrong .badge {
+        background: var(--wrong);
+      }
+
+      .feedback {
+        margin-top: 20px;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition:
+          max-height 0.35s ease,
+          opacity 0.25s ease;
+        border-radius: 12px;
+      }
+
+      .feedback.show {
+        max-height: 420px;
+        opacity: 1;
+        padding: 16px 18px;
+        border: 1.5px solid var(--line);
+      }
+
+      .feedback-correct {
+        background: var(--correct-bg);
+        border-color: var(--correct);
+      }
+
+      .feedback-wrong {
+        background: var(--wrong-bg);
+        border-color: var(--wrong);
+      }
+
+      .feedback-head {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-bottom: 6px;
+      }
+
+      .feedback-tag {
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 700;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+
+      .feedback-correct .feedback-tag {
+        color: var(--correct);
+      }
+      .feedback-wrong .feedback-tag {
+        color: var(--wrong);
+      }
+
+      .feedback-answer {
+        font-size: 14px;
+        color: var(--ink-soft);
+      }
+
+      .feedback-explain {
+        margin: 0;
+        font-size: 14.5px;
+        line-height: 1.55;
+        color: var(--ink);
+      }
+
+      .feedback-fonte {
+        margin: 10px 0 0;
+        padding-top: 10px;
+        border-top: 1px dashed var(--line);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11.5px;
+        color: var(--ink-soft);
+        line-height: 1.5;
+      }
+
+      .actions {
+        margin-top: 22px;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .next-btn {
+        font-family: "Sora", sans-serif;
+        font-weight: 600;
+        font-size: 14.5px;
+        color: var(--bg);
+        background: var(--gold);
+        border: none;
+        border-radius: 10px;
+        padding: 12px 22px;
+        cursor: pointer;
+        transition:
+          transform 0.12s ease,
+          filter 0.12s ease;
+      }
+
+      .next-btn:hover {
+        filter: brightness(1.06);
+        transform: translateY(-1px);
+      }
+
+      .result {
+        text-align: center;
+        padding: 20px 0 8px;
+      }
+
+      .result-kicker {
+        display: block;
+        font-size: 12px;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        margin-bottom: 14px;
+      }
+
+      .result-score {
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        gap: 8px;
+        margin-bottom: 10px;
+      }
+
+      .result-number {
+        font-size: 64px;
+        color: var(--bg-alt);
+      }
+
+      .result-slash {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 22px;
+        color: var(--ink-soft);
+      }
+
+      .result-tier {
+        font-family: "Fraunces", serif;
+        font-size: 19px;
+        font-weight: 600;
+        margin: 0 0 26px;
+      }
+
+      .hint {
+        text-align: center;
+        font-size: 12.5px;
+        color: rgba(247, 242, 231, 0.55);
+      }
+
+      .hint kbd {
+        font-family: "JetBrains Mono", monospace;
+        background: rgba(247, 242, 231, 0.12);
+        padding: 1px 6px;
+        border-radius: 4px;
+        color: var(--card);
+      }
+
+      @media (max-width: 480px) {
+        .masthead-title {
+          font-size: 34px;
+        }
+        .card {
+          padding: 26px 20px;
+        }
+        .q-text {
+          font-size: 21px;
+        }
+        .result-number {
+          font-size: 48px;
+        }
+        .seg {
+          width: 9px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          transition: none !important;
+        }
+      }
+    </style>
+  </body>
+</html>
